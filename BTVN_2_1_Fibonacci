@@ -1,9 +1,9 @@
 public class Fibonacci{
-		public static void main(String args[]) {
+	       public static void main(String args[]) {
 
 			int n;
-			Scanner scanner =new Scanner(System.in);
-			System.out.print("nhap so n: ");
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("nhap so n: ");
 			n=scanner.nextInt();
 			System.out.println("tong cua day so fibonacci = "+tongFibonacci(n));
 		}
