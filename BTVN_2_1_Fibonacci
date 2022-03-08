@@ -1,3 +1,5 @@
+import java.util.Sacnner;
+
 public class Fibonacci{
 	       public static void main(String args[]) {
 
@@ -15,11 +17,11 @@ public class Fibonacci{
 				return 2;
 			} else {
 				int sum=0;
-				int a[] =new int[n];
-				a[0]=a[1]=1;
-				for(int i=2;i<n;i++) {
-					a[i]=a[i-1]+a[i-2];
-					sum+=a[i];
+				int F[] = new int[n];
+				F[0] = F[1] = 1;
+				for(int i=2; i<n; i++) {
+					F[i] = F[i-1] + F[i-2];
+					sum += F[i];
 				}
 				
 				return sum+2;
