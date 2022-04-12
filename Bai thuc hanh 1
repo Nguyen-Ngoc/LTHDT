@@ -1,3 +1,4 @@
+//bài 1
 import java.util.Scanner;
 public class SapXep {
     public static Scanner scanner = new Scanner(System.in);
@@ -40,3 +41,173 @@ public class SapXep {
     System.out.format("trung binh cong cua day so la: %.1f", tb);
     
 }
+
+
+
+//Bài 2
+
+import java.io;
+import java.Math;
+public class point{
+//a
+    private double x = 3;
+    private double y = 5;
+    public point(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+    public point(){
+        this.x = 0;
+        this.y = 0;
+    }
+    public point(A){
+        this.x = A.x;
+        this.y = A.y;
+    }
+    public point(B){
+        this.x = B.X;
+        this.y = B.y;
+    }
+    
+//b
+// set, get cua X, Y
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+//khang cach giua 2 diem
+     public static double distance(Point A, Point B) {
+        double kc;
+        kc = Math.sqrt(Math.pow((B1.x - A1.x), 2) + Math.pow((B2.y - A2.y), 2));
+        return kc;
+    }
+//c 
+    public ptdt(point A, point B){
+        n = (A1 - B1)*(x - A1) + (A2 - B2)*(y - A2);
+        System.out.println("phuong trinh duong thang di qua 2 diem A va B la:" \n + n);
+    }
+
+
+
+
+}
+
+public static void main(String[] args) {
+    double xA, yA;  
+    double xB, yB;  
+    double dodaiAB; 
+    Scanner scanner = new Scanner(System.in);
+         
+    System.out.println("tọa độ điểm A: ");
+    System.out.println("hoành độ A:");
+    xA = scanner.nextDouble();
+    System.out.println("tung độ A: ");
+    yA = scanner.nextDouble();
+         
+    System.out.println("\ntọa độ điểm B: ");
+    System.out.println("hoành độ B: ");
+    xB = scanner.nextDouble();
+    System.out.println("tung độ B: ");
+    yB = scanner.nextDouble();
+         
+    // tính độ dài AB
+    dodaiAB = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2));
+    System.out.println("Độ dài đoạn thắng AB = " + dodaiAB);
+
+    import java.io;
+import java.Math;
+public class point{
+//a
+    private double x = 3;
+    private double y = 5;
+    public point(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+    public point(){
+        this.x = 0;
+        this.y = 0;
+    }
+    public point(A){
+        this.x = A.x;
+        this.y = A.y;
+    }
+    public point(B){
+        this.x = B.X;
+        this.y = B.y;
+    }
+    
+//b
+// set, get cua X, Y
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+//khang cach giua 2 diem
+     public static double distance(Point A, Point B) {
+        double kc;
+        kc = Math.sqrt(Math.pow((B1.x - A1.x), 2) + Math.pow((B2.y - A2.y), 2));
+        return kc;
+    }
+//c 
+    public ptdt(point A, point B){
+        n = (A1 - B1)*(x - A1) + (A2 - B2)*(y - A2);
+        System.out.println("phuong trinh duong thang di qua 2 diem A va B la:" \n + n);
+    }
+
+
+
+
+}
+
+public static void main(String[] args) {
+    double xA, yA;  
+    double xB, yB;  
+    double dodaiAB; 
+    Scanner scanner = new Scanner(System.in);
+         
+    System.out.println("tọa độ điểm A: ");
+    System.out.println("hoành độ A:");
+    xA = scanner.nextDouble();
+    System.out.println("tung độ A: ");
+    yA = scanner.nextDouble();
+         
+    System.out.println("\ntọa độ điểm B: ");
+    System.out.println("hoành độ B: ");
+    xB = scanner.nextDouble();
+    System.out.println("tung độ B: ");
+    yB = scanner.nextDouble();
+         
+    // tính độ dài AB
+    dodaiAB = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2));
+    System.out.println("Độ dài đoạn thắng AB = " + dodaiAB);
+}
+
+
+
+
+
+
+
