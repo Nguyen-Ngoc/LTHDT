@@ -125,8 +125,9 @@ public static void main(String[] args) {
     dodaiAB = Math.sqrt(Math.pow((xB - xA), 2) + Math.pow((yB - yA), 2));
     System.out.println("Độ dài đoạn thắng AB = " + dodaiAB);
 
-    import java.io;
-import java.Math;
+//Bai 2
+
+import java.io;
 public class point{
 //a
     private double x = 3;
