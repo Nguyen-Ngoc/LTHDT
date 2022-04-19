@@ -126,6 +126,9 @@ public class LinkedStack implements Stack{
     }
 }
 
+// bai 4
+
+
 
 
 
