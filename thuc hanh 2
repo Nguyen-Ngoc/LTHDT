@@ -1,0 +1,46 @@
+import java.util.Stack;
+// bai 2
+public class MyStack{
+ private Node[] values;
+ public MyStack(){}
+ public MyStack(Node[] values){
+  this.values = values;
+ }
+ // lấy ra 1 node từ ngăn xếp 
+ public Node pop(){
+  Node result = null;
+  if ((values != null) && (values.length > 0)){
+   result = values[values.length - 1];
+   Node[] tmpNode = new Node[values.length - 1];
+   for (int i = 0; i < values.length – 1; i++){
+    tmpNode[i] = values[i];
+   this.values = tmpNode;
+   }
+  }
+  return result;
+ }
+ // thêm 1 phần tử vào ngăn xếp 
+ public void push(Node node){
+  if (values == null){  
+   values = new Node[1];
+   values[0] = node;
+  }
+  else{ 
+   Node[] tmpNode = new Node[values.length + 1];
+   for (int i = 0; i < values.length; i++)
+      tmpNode[i] = values[i];
+   tmpNode[values.length] = node;
+   this.values = tmpNode;
+  }
+ }
+ public void top(){
+    Node
+ }
+}
+
+// bai 1
+public class ArrayStack implement
+public  ArraySrack 
+
+
+
