@@ -4,16 +4,267 @@
 
 // b. Đọc dãy số từ tệp vào một mảng và sắp xếp dãy số đó, ghi vào tệp khác có tên sapxep.txt
 
+import java.io.; 
+import java.util.*; 
 
+public class DaySo { 
+    static String filename-"dayso2.dat"; 
+    final static double DOUBLE_SIZE = 8; 
+   public static double[] inputData(int n){ 
+       Scanner scan = new Scanner(System.in); 
+       //System.out..printin("Nhap so tu ban phim:"); 
+       double[] a = new double[n]; 
+       for(int i-0;ika.length;i++) { 
+           System.out.println("Nhap vap phan tu thu "+i+":"); 
+           a[i]=scan.nextDouble(); 
+       }
+        return a; 
+   }
+   public static void writeFile(double[] a, String filename) throws IOException{
+       File datFile = new File(filename); 
+       RandomAccessFile out file = new RandomAccessFile(datFile, "r"); 
+       for(int i=0;ika.length;i++) out_file.writeDouble(a[i]); 
+       out_file.close();
+   }
+   public static double[] readFile(String filename) throws I0Exception{
+       File datFile = new File(filename); 
+       RandomAccessFile in file = new RandomAccessFile(datFile, "r"); 
+       long len=in_file.length(); 
+       int =(int) (len/8); 
+       double a[] = new double[m]; 
+       int j-0; 
+       for (int i-0; i < len; i += DOUBLE SIZE){
+           in_file.seek(i);
+           a[i] = in file.readDouble();
+           j = j + 1;
+       }
+       in_file.close();
+       return a;
+   }
+   public static 
+   public static void display(double[] a){ 
+       for(int i-0;ika.length; i++) System.out.print(a[i]+" "); 
+       System.out.println();
+   }
+   public static void sort( double[] a){ 
+       double tg; 
+       for (int i-0;i<a.length-1; i++)
+           for (int j-i+1;j<a.length;j++) 
+               if(a[i]>a[j]){
+                   tg = a[i];
+                   a[i] = a[j];
+                   a[j] = tg;
+               }
+   public static void main(String[] args) throws IOException{
+       System.out.println("nhap vao so phan tu cua day so:");
+       Scanner scan = new Scanner(System.in);
+       int n = scn.nextInt();
+       double a[] = inputData(n);
+       System.out.println("day so da nhap la:");
+       display(a);
+       writerFile(a, "ds1.dat");
+       a = readFile("ds1.dat");
+       System.out.println("day so doc tu tep la:");
+       sort(a);
+       writerFile(a, "sx.dat");
+       a = readFile("sx.dat");
+       display(a);
+       
+   }
+}
+              
+// bai 2:
+package qlsv;
+import java.util.Scanner;
 
+public class Subject implements java.io.Serializable{
+    
+    private int subjectCode;
+    private String subjectName;
+    private double midMark;
+    private double finalMark;
+    transient Scanner sc = new Scanner();
+    
+    public Subject(){
+        // Scanner sc = new Scanner();
+        System.out.print("nhap ma mom hoc:");
+        subjectCode = sc.nextInt();
+        sc.nextLine;
+        System.out.println("nhap ten mon hoc:");
+        subjectName = sc.nextLine();
+        System.out.println("nhap diem giua ky:");
+        midMark = sc.nextDouble();
+        System.out.println("nhap diem cuoi ky:");
+        finalMark = sc.nextDouble();
+    }
+    public void setSubjectCode(int code){
+        subjectCode = code;
+    }
+    
+    public double getSubjectCode(){
+        return subjectCode;
+        
+    }
+    
+    public void setSubjectName(String name){
+        subjectName = name;
+        
+    }
+    
+    public String getSubjectName(){
+        return subjectName;
+    }
+    
+    public void setMidMark(double m){
+        midMark = m;
+    }
+    
+    public double getMidMark(){
+        return midMark;
+    }
+    
+    public void setFinalMark(double f){
+        finalMark = f;
+    }
+    
+    public double getFinalMark(){
+        return finalMark;
+    }
+    
+    public double computeAvgMark(){
+        return 0.5*midMark + 0.5*finalMark;
+    }
+    
+    public void display(){
+        System.out.println("Ma mon hoc:" + subjectCode);
+        System.out.println("Ten mon hoc:" + subjectName);
+        double tb = computeAvgMark();
+        System.out.println("Diem mon hoc:" + tb);
+    }
+    
+}
 
+package qlsv;
+import java.util..*;
 
+public class Student implements java.io.Serializable{
+    
+    private int studentCode;
+    private String studentName;
+    private ArrayList<Subject> subjectList;
+    private int n;
+    transient Scanner sc = new Scanner(System.in);
+    
+    public Student(){
+        System.out.print("nhap vao ma sinh vien:");
+        studentCode = sc.nextInt();
+        System.out.print("nhap vao ten sinh vien:");
+        studentName = sc.nextLine();
+        System.out.print("nhap vao so mon hoc:");
+        n = sc.nextInt();
+        subjectList = new ArrayList<Subject>(n);
+        for (int i=0; i<n; i++){
+            subjectList.add(new Subject());
+        }
+    }
+    
+    public double computeGPA(){
+        double tg;
+        for(Subject sub: subjectList){
+            tg = tg + sub.computeAvgMark();
+        }
+        return tg/n;
+    }
+    
+    public void display(){
+        System.out.println("ma sinh vien:" + studentCode);
+        System.out.println("ten sinh vien:" + studentName);
+        System.out.println("cac mon hoc:");
+        for(Subject sub: subjectList) sub.display();
+        System.out.println("diem trung binh cac mon hoc:" + computeGPA());
+        
+    }
+}
 
-
-
-
-
-
-
-
-
+               
+package qlsv; 
+import java.util.*;
+import java.io.*; 
+public class QLSV {
+    public static ArrayList<Sstudent> inputData(int n){
+        ArrayList<Student> list = new ArrayList<Student>(n);
+        // Student sv;
+        for (int i-0;i<n;i++){ 
+            System.out.println("Nhap thong tin cho sinh vien:"+i); 
+            sv = new Student(); 
+            list.add(new Student ()); 
+        }
+        return list; 
+    }
+    public static void writeListToFile(String filename, Arraylist<Student> list) throws IOException {
+        File file = new File(filename); 
+        FileOutputStream fos = new FileOutputStream(file); 
+        ObjectOutputStream oos - new ObjectOutputStream(fos); 
+        oos.writeObject( list); 
+        fos.close(); 
+        oos.close(); 
+    }
+    public static ArrayList<Student> readListFromFile(String filename) throws Exception {
+        ArrayList<Student> list-null3; 
+        FileInputStream fis-null; 
+        ObjectInputStream ois-null; 
+        try{
+            File file = new File(filename);
+            fis = new FileInputStream(file); 
+            ois = new ObjectInputStream(fis); 
+            list-(ArrayList<Student>)ois.readObject(); 
+        }
+        catch (Exception e){ 
+            System.err.printin(e);
+        }
+        finally{ 
+            Fis.close(); 
+            ois.close(); 
+        }
+        return list; 
+    }
+    public static void display (ArrayList<Student> list){ 
+        for (Student sv: list) sv.display();
+    }
+    public static void main(string[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap vao so sinh vien:");
+        int n = sc.nextInt();
+        sc.nextLine();
+        System.out.println("nhap vao ten tap tin:");
+        String filename = sc.nextLine();
+        ArrayList<Student> dssv = inputData(n);
+        writerListToFile(filename);
+        SyStem.out.println("danh sach sinh vien:");
+        display(dssv);
+    }       
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
