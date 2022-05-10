@@ -102,7 +102,7 @@ public class Subject implements java.io.Serializable{
     private double finalMark;
     transient Scanner sc = new Scanner();
     
-    public Subject(){
+    public Subject(){ 
         // Scanner sc = new Scanner();
         System.out.print("nhap ma mom hoc:");
         subjectCode = sc.nextInt();
