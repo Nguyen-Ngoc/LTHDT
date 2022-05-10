@@ -22,8 +22,8 @@ public class DaySo {
    }
    public static void writeFile(double[] a, String filename) throws IOException{
        File datFile = new File(filename); 
-       RandomAccessFile out file = new RandomAccessFile(datFile, "r"); 
-       for(int i=0;ika.length;i++) out_file.writeDouble(a[i]); 
+       RandomAccessFile out file = new RandomAccessFile(datFile, "rw"); 
+       for(int i=0; i<a.length; i++) out_file.writeDouble(a[i]); 
        out_file.close();
    }
    public static double[] readFile(String filename) throws I0Exception{
@@ -43,7 +43,7 @@ public class DaySo {
    }
    public static 
    public static void display(double[] a){ 
-       for(int i-0;ika.length; i++) System.out.print(a[i]+" "); 
+       for(int i-0; i<a.length; i++) System.out.print(a[i]+" "); 
        System.out.println();
    }
    public static void sort( double[] a){ 
@@ -54,11 +54,11 @@ public class DaySo {
                    tg = a[i];
                    a[i] = a[j];
                    a[j] = tg;
-               }
+   }
    public static void main(String[] args) throws IOException{
        System.out.println("nhap vao so phan tu cua day so:");
        Scanner scan = new Scanner(System.in);
-       int n = scn.nextInt();
+       int n = scan.nextInt();
        double a[] = inputData(n);
        System.out.println("day so da nhap la:");
        display(a);
@@ -197,30 +197,30 @@ public class QLSV {
         for (int i-0;i<n;i++){ 
             System.out.println("Nhap thong tin cho sinh vien:"+i); 
             sv = new Student(); 
-            list.add(new Student ()); 
+            list.add(new Student()); 
         }
         return list; 
     }
     public static void writeListToFile(String filename, Arraylist<Student> list) throws IOException {
         File file = new File(filename); 
         FileOutputStream fos = new FileOutputStream(file); 
-        ObjectOutputStream oos - new ObjectOutputStream(fos); 
+        ObjectOutputStream oos = new ObjectOutputStream(fos); 
         oos.writeObject( list); 
         fos.close(); 
         oos.close(); 
     }
     public static ArrayList<Student> readListFromFile(String filename) throws Exception {
-        ArrayList<Student> list-null3; 
-        FileInputStream fis-null; 
-        ObjectInputStream ois-null; 
+        ArrayList<Student> list=null; 
+        FileInputStream fis=null; 
+        ObjectInputStream ois=null; 
         try{
             File file = new File(filename);
             fis = new FileInputStream(file); 
             ois = new ObjectInputStream(fis); 
-            list-(ArrayList<Student>)ois.readObject(); 
+            list=(ArrayList<Student>)ois.readObject(); 
         }
         catch (Exception e){ 
-            System.err.printin(e);
+            System.err.println(e);
         }
         finally{ 
             Fis.close(); 
@@ -242,29 +242,4 @@ public class QLSV {
         writerListToFile(filename);
         SyStem.out.println("danh sach sinh vien:");
         display(dssv);
-    }       
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
+    }  
