@@ -73,7 +73,24 @@ public class DaySo {
    }
 }
               
-// bai 2:
+
+// Bài 2: Tạo lập một lớp Student có khả năng tuần tự hóa (Serializable), lớp này bao gồm các trường thông tin sau:
+
+// studentCode: int mã sinh viên
+
+// name: String tên sinh viên
+
+// n: số môn học sinh viên đã học có kiểu int
+
+// subject[ n] Subject . Trong đó lớp Subject bao gồm các trường thông tin subjectCode: mã môn học, subjectName: tên môn, double x (điểm giữa kỳ), double y điểm cuối kỳ. Các cấu tử tạo lập môn học, phương thức hiển thị thông tin của môn học, phương thức get, set cho các trường, phương thức tính điểm môn học theo công thức điểm tb môn học=0.5*x+0.5*y
+
+// Lớp Student có các cấu tử không tham số, có tham số, các phương thức set, get cho các trường thông tin, phương thức hiển thị thông tin của một sinh viên, tính điểm trung bình trung của sinh viên.
+
+// a. Tạo lập một mảng các đối tượng Student, ghi mảng này vào một tệp student.dat
+
+// b.  Đọc dữ liệu từ tệp tin được tạo ra từ phần a và lưu vào mảng, sau đó sắp xếp mảng theo điểm trung bình trung từ cao xuống thấp, ghi lại mảng các sinh viên đã sắp xếp vào tệp sortedstudent.data
+
+
 package qlsv;
 import java.util.Scanner;
 
