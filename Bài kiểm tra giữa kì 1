@@ -1,31 +1,51 @@
-// bài 1
-import java.util.Sacnner;
+// bài 1:
+public class Fibonacci {
+    public static void main(String[] args) {
+        
+        for (int i = 0; i < 200; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+    public static int fibonacci(int n) {
+        int f0 = 0;
+        int f1 = 1;
+        int fn = 1;
+ 
+        if (n < 0) {
+            return -1;
+        } else if (n == 0 || n == 1) {
+            return n;
+        } else {
+            for (int i = 2; i < n; i++) {
+                f0 = f1;
+                f1 = fn;
+                fn = f0 + f1;
+                
+                
+            }
+        }
+        return fn;
+    }
+}
 
-public class Fibonacci{
-	       public static void main(String args[]) {
+// bài 2
+package Ps;
+import java.til.Scanner;
 
-			int n;
-			Scanner scanner = new Scanner(System.in);
-			System.out.println("nhap so n: ");
-			n=scanner.nextInt();
-			System.out.println("tong cua day so fibonacci = "+tongFibonacci(n));
-		}
-
-		public static int Tong(int n) {
-			if (n == 1) {
-				return 1;
-			} else if (n == 2) {
-				return 2;
-			} else {
-				int sum=0;
-				int F[] = new int[n];
-				F[0] = F[1] = 1;
-				for(int i=2; i<n; i++) {
-					F[i] = F[i-1] + F[i-2];
-					sum += F[i];
-				}
-				
-				return sum+2;
-			}
-		}
-	}
+public class Person implements java.io.Serializable {
+    private String name;
+    private int age;
+    private String address;
+    
+    
+    public Person(){
+        System.out.print("nhap ten nhan vien:");
+        name = sc.nextInt();
+        System.out.println("nhap tuoi nhan vien:");
+        age = sc.nextLine();
+        System.out.println("nhap dia chi cua nhan vien:");
+        address = sc.nextLine();
+        
+    }
+    
+}
